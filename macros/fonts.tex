@@ -1,0 +1,10 @@
+
+\newcommand{\cbpSetMainFont}[1] {
+	\IfStrEqCase{#1} {
+		{overlock} {
+			\usepackage[sfdefault]{overlock} %% Option 'sfdefault' only if the base font of the document is to be sans serif
+			\usepackage[T1]{fontenc}
+		}
+	}
+    [nada]
+}
