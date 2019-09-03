@@ -1,0 +1,18 @@
+% Document Class
+\ifdefined\cbpDocumentClass
+	% recommended values:
+	% - mwart
+	% - report
+\else
+	\newcommand{\cbpDocumentClass}{mwart}
+\fi
+
+\ifdefined\cbpDocumentSides
+	% recommended values:
+	% - oneside
+	% - twoside
+\else
+	\newcommand{\cbpDocumentSides}{oneside}
+\fi
+
+\documentclass[12pt,\cbpDocumentSides,a4paper]{\cbpDocumentClass}
