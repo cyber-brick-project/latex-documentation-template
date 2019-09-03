@@ -1,4 +1,12 @@
-\documentclass[12pt,twoside,a4paper]{report}
+%\documentclass[12pt,twoside,a4paper]{report}
+%\documentclass[12pt,twoside,a4paper]{mwart}
+
+\ifdefined\cbpDocumentClass
+	\documentclass[12pt,twoside,a4paper]{\cbpDocumentClass}
+\else
+	\documentclass[12pt,twoside,a4paper]{mwart}
+\fi
+
 \usepackage[utf8]{inputenc}
 
 % images
