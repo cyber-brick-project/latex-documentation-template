@@ -1,0 +1,11 @@
+\newcommand{\cbpEmptyPageIfTwoside}{
+	\IfStrEqCase{\cbpDocumentSides} {
+		{oneside} {}
+		{twoside} {
+			\newpage
+			\thispagestyle{empty}
+			\mbox{}
+			\clearpage
+		}
+	}
+}
