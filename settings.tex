@@ -1,6 +1,32 @@
+% Document Class
+	% recommended values:
+	% - mwart - default
+	% - report
+% \newcommand{\cbpDocumentClass}{mwart}
+
+% Document sides (book or digital)
+	% recommended values:
+	% - oneside - default
+	% - twoside
+% \newcommand{\cbpDocumentSides}{oneside}
+
+% Document Font:
+	% - fontenc - default
+	% - overlock
+% \newcommand{\cbpDocumentFont}{fontec}
+
+
+\input{latex-template/packages.tex}
+
 \input{latex-template/macros/title-page.tex}
 
 \input{latex-template/macros/fonts.tex}
 
 \input{latex-template/settings/document-settings.tex}
-\input{latex-template/settings/base-settings}
+
+\cbpRunDocumnetClass
+\cbpRunUsePackage
+\cbpRunDocumnetMargins
+\cbpRunDocumnetFont
+
+

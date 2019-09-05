@@ -7,6 +7,7 @@
 	\newcommand{\cbpDocumentClass}{mwart}
 \fi
 
+% Document sides (book or digital)
 \ifdefined\cbpDocumentSides
 	% recommended values:
 	% - oneside
@@ -15,4 +16,18 @@
 	\newcommand{\cbpDocumentSides}{oneside}
 \fi
 
-\documentclass[12pt,\cbpDocumentSides,a4paper]{\cbpDocumentClass}
+\newcommand{\cbpRunDocumnetClass}{
+	\documentclass[12pt,\cbpDocumentSides,a4paper]{\cbpDocumentClass}
+}
+
+\newcommand{\cbpRunDocumnetMargins}{
+	\IfStrEqCase{\cbpDocumentSides} {
+		{oneside} {
+			\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+		}
+		{twoside} {
+			\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+		}
+	}
+}
+

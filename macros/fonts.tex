@@ -1,20 +1,40 @@
 
-%% Options:
-%% - overlock
-%% - fontenc
+% Document Font:
+\ifdefined\cbpDocumentFont
+	% - fontenc
+	% - overlock
+\else
+	\newcommand{\cbpDocumentFont}{fontenc}
+\fi
+
+
 \newcommand{\cbpSetMainFont}[1] {
 	\IfStrEqCase{#1} {
-		{overlock} {
-			\usepackage[sfdefault]{overlock} %% Option 'sfdefault' only if the base font of the document is to be sans serif
-			\usepackage[T1]{fontenc}
-			
-			\usepackage{hyperref} % hyperilinks in TOC
-		}
 		{fontenc} {
 			\usepackage[T1]{fontenc}
 			\usepackage{uarial}
 			\renewcommand*{\familydefault}{\sfdefault}
+
+			% hyperilinks in TOC
+			\usepackage{hyperref}
+
+			% Line stretch
+			\renewcommand{\baselinestretch}{1.25}
+		}
+		{overlock} {
+			\usepackage[sfdefault]{overlock} %% Option 'sfdefault' only if the base font of the document is to be sans serif
+			\usepackage[T1]{fontenc}
+
+			% hyperilinks in TOC
+			\usepackage{hyperref}
+
+			% Line stretch
+			\renewcommand{\baselinestretch}{1.25}
 		}
 	}
-    [nada]
+	[nada]
+}
+
+\newcommand{\cbpRunDocumnetFont}{
+	\cbpSetMainFont{\cbpDocumentFont}
 }
