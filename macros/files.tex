@@ -1,0 +1,5 @@
+\newcommand{\cbpInputFileIfExists}[1] {
+	\IfFileExists{#1}{
+		\input{#1}
+	}{}
+}

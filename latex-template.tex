@@ -18,6 +18,7 @@
 
 \input{latex-template/packages.tex}
 
+\input{latex-template/macros/files.tex}
 \input{latex-template/macros/title-page.tex}
 \input{latex-template/macros/pages.tex}
 \input{latex-template/macros/text.tex}
@@ -25,9 +26,11 @@
 \input{latex-template/settings/fonts.tex}
 \input{latex-template/settings/document-settings.tex}
 
-\cbpRunDocumnetClass
-\cbpRunUsePackage
-\cbpRunDocumnetMargins
-\cbpRunDocumnetFont
+\newcommand{\cbpRunFramework} {
+	\cbpRunDocumnetClass
+	\cbpRunUsePackage
+	\cbpRunDocumnetMargins
+	\cbpRunDocumnetFont
+}
 
 
