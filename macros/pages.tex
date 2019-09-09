@@ -9,3 +9,21 @@
 		}
 	}
 }
+
+\newcommand{\cbpEmptyPageIfTwosideOdd}{
+	\checkoddpage
+	\ifoddpage
+		\cbpEmptyPageIfTwoside
+	\else
+	\fi
+}
+
+
+\newcommand{\cbpEmptyPageIfTwosideEven}{
+	\checkoddpage
+	\ifoddpage
+	\else
+		\cbpEmptyPageIfTwoside
+	\fi
+}
+
