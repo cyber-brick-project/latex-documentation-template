@@ -1,9 +1,14 @@
-\newcommand{\cbpEmptyPageIfTwoside}{
+\newcommand{\cbpEmptyPageIfTwoside}[1][empty]{
 	\IfStrEqCase{\cbpDocumentSides} {
 		{oneside} {}
 		{twoside} {
 			\newpage
-			\thispagestyle{empty}
+			\IfStrEqCase{#1} {
+				{empty} {
+					\thispagestyle{empty}
+				}
+				{numbered} {}
+			}
 			\mbox{}
 			\clearpage
 		}
@@ -13,7 +18,7 @@
 \newcommand{\cbpEmptyPageIfTwosideOdd}{
 	\checkoddpage
 	\ifoddpage
-		\cbpEmptyPageIfTwoside
+		\cbpEmptyPageIfTwoside[numbered]
 	\else
 	\fi
 }
@@ -23,7 +28,7 @@
 	\checkoddpage
 	\ifoddpage
 	\else
-		\cbpEmptyPageIfTwoside
+		\cbpEmptyPageIfTwoside[numbered]
 	\fi
 }
 
